@@ -1,0 +1,17 @@
+[package]
+name = "cargo-examples-bug"
+version = "0.1.0"
+authors = ["Chip Senkbeil <chip@senkbeil.org>"]
+edition = "2018"
+publish = false
+
+[features]
+my-feature = ["serde_json"]
+
+[[example]]
+name = "user"
+required-features = ["my-feature", "serde/derive", "serde/rc"]
+
+[dependencies]
+serde = "1.0.117"
+serde_json = { version = "1.0.61", optional = true }
